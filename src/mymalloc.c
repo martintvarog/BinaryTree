@@ -30,7 +30,10 @@ tHTableNode *hashTable[HASH_TABLE_SIZE]; /* jednoduchá hashovaci tabulka=pole
 /***************************************************************************
  *  funkce hash převádí klíč na index do pole hash tabulky
  ***************************************************************************/
-tHTableIndex hashFn(tHTableKey key) { return ((tDword)key % HASH_TABLE_SIZE); }
+tHTableIndex hashFn(tHTableKey key) { 
+    return ( ( uintptr_t )key % HASH_TABLE_SIZE );
+    
+}
 
 /***************************************************************************
  * funkce insertHTableNode vytvoří nový uzel se zadaným klíčem a daty a vloží
