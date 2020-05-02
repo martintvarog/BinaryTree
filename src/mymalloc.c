@@ -1,5 +1,6 @@
 #include "mymalloc.h"
 #include <stdio.h>
+#include <stdint.h>
 /**
  * \file mymalloc.c
  * \brief Modul mymalloc obsahuje funkce pro ladění pridělování paměti
