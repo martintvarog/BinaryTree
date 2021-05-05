@@ -1,0 +1,4 @@
+# Ignore user config files
+*.qbs.user
+*.idea
+doc/html/

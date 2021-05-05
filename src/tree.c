@@ -37,21 +37,21 @@ void print_inorder(TreeNode* node, TreeNodeProc proc);
  */
 void print_preorder(TreeNode* node, TreeNodeProc proc);
 
-bool Tree_Init(Tree* const root) {
-  (void)root;
+bool Tree_Init(Tree* const tree) {
+  (void)tree;
   return false;
 }
 
-void Tree_Clear(Tree* const root) { (void)root; }
+void Tree_Clear(Tree* const tree) { (void)tree; }
 
-bool Tree_Insert(Tree* const root, const Data_t data) {
-  (void)root;
+bool Tree_Insert(Tree* const tree, const Data_t data) {
+  (void)tree;
   (void)data;
   return false;
 }
 
-void Tree_Delete(Tree* const root, const Data_t data) {
-  (void)root;
+void Tree_Delete(Tree* const tree, const Data_t data) {
+  (void)tree;
   (void)data;
 }
 
@@ -60,19 +60,19 @@ const Data_t* Tree_Get_Data(const TreeNode* const node) {
   return NULL;
 }
 
-TreeNode* Tree_Find_Node(Tree root, const Data_t data) {
-  (void)root;
+TreeNode* Tree_Find_Node(Tree tree, const Data_t data) {
+  (void)tree;
   (void)data;
   return NULL;
 }
 
-size_t Tree_Get_Count(Tree root) {
-  (void)root;
+size_t Tree_Get_Count(Tree tree) {
+  (void)tree;
   return 0;
 }
 
-void Tree_Process(Tree root, TreeNodeProc proc, TreeProcessMode mode) {
-  (void)root;
+void Tree_Process(Tree tree, TreeNodeProc proc, TreeProcessMode mode) {
+  (void)tree;
   (void)proc;
   (void)mode;
 }

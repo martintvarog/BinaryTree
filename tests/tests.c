@@ -36,7 +36,7 @@ MU_TEST(test_tree_init) {
   mu_assert(Tree_Init(&tree),
             "Tree wasnt initialized. Expected true, got false.");
   mu_assert(tree.root == NULL, "The root should be NULL");
-  mu_assert_int_eq(0, (int)tree.itemsCount);
+  mu_assert_int_eq(0, (int)tree.nodeCount);
 }
 
 MU_TEST(test_tree_init_nulls) {
@@ -73,7 +73,7 @@ MU_TEST(test_tree_insert) {
         0, memcmp(&testingData, &tree.root->right->data, sizeof(testingData)));
   }
 
-  mu_assert_int_eq(3, tree.itemsCount);
+  mu_assert_int_eq(3, tree.nodeCount);
   myFree(tree.root->left);
   myFree(tree.root->right);
   myFree(tree.root);
@@ -117,14 +117,14 @@ MU_TEST(test_tree_delete_non_existing_node) {
   }
   Data_t testingData = {.name = "Peter"};
   Tree_Delete(&tree, testingData);
-  mu_assert_int_eq(1, tree.itemsCount);
+  mu_assert_int_eq(1, tree.nodeCount);
 }
 
 MU_TEST(test_tree_delete_empty_tree) {
   Tree tree = {NULL, 0};
   Data_t testingData = {.name = "Peter"};
   Tree_Delete(&tree, testingData);
-  mu_assert_int_eq(0, (int)tree.itemsCount);
+  mu_assert_int_eq(0, (int)tree.nodeCount);
 }
 
 MU_TEST(test_tree_delete) {
@@ -141,11 +141,11 @@ MU_TEST(test_tree_delete) {
   /* Delete with 2 childrens ----------------------------------------------- */
   Tree_Delete(&tree, data[0]);
   mu_assert_string_eq(data[7].name, tree.root->data.name);
-  mu_assert_int_eq(7, (int)tree.itemsCount);
+  mu_assert_int_eq(7, (int)tree.nodeCount);
 
   {
     gIndex = 0;
-    Tree_Process(tree, ProcessNode, procINORDER);
+    Tree_Process(tree, ProcessNode, IN_ORDER);
     int inOrder[] = {179, 158, 169, 164, 198, 184, 174};
     mu_assert_int_eq(0, memcmp(inOrder, gHeight, sizeof(inOrder)));
   }
@@ -153,8 +153,8 @@ MU_TEST(test_tree_delete) {
   {
     gIndex = 0;
     Tree_Delete(&tree, data[4]);
-    mu_assert_int_eq(6, (int)tree.itemsCount);
-    Tree_Process(tree, ProcessNode, procINORDER);
+    mu_assert_int_eq(6, (int)tree.nodeCount);
+    Tree_Process(tree, ProcessNode, IN_ORDER);
     int inOrder[] = {179, 158, 169, 198, 184, 174};
     mu_assert_int_eq(0, memcmp(inOrder, gHeight, sizeof(inOrder)));
   }
@@ -162,8 +162,8 @@ MU_TEST(test_tree_delete) {
   {
     gIndex = 0;
     Tree_Delete(&tree, data[6]);
-    mu_assert_int_eq(5, (int)tree.itemsCount);
-    Tree_Process(tree, ProcessNode, procINORDER);
+    mu_assert_int_eq(5, (int)tree.nodeCount);
+    Tree_Process(tree, ProcessNode, IN_ORDER);
     int inOrder[] = {179, 158, 198, 184, 174};
     mu_assert_int_eq(0, memcmp(inOrder, gHeight, sizeof(inOrder)));
   }
@@ -172,8 +172,8 @@ MU_TEST(test_tree_delete) {
   {
     gIndex = 0;
     Tree_Delete(&tree, data[7]);
-    mu_assert_int_eq(4, (int)tree.itemsCount);
-    Tree_Process(tree, ProcessNode, procINORDER);
+    mu_assert_int_eq(4, (int)tree.nodeCount);
+    Tree_Process(tree, ProcessNode, IN_ORDER);
     int inOrder[] = {179, 158, 184, 174};
     mu_assert_int_eq(0, memcmp(inOrder, gHeight, sizeof(inOrder)));
   }
@@ -226,7 +226,7 @@ MU_TEST(test_tree_clear) {
 
   Tree_Clear(&tree);
 
-  mu_assert_int_eq(0, tree.itemsCount);
+  mu_assert_int_eq(0, tree.nodeCount);
   mu_assert(tree.root == NULL, "Root should be NULL after Tree_Clear.");
 }
 
@@ -295,17 +295,17 @@ MU_TEST(test_tree_process) {
     Tree_Insert(&tree, data);
   }
 
-  Tree_Process(tree, ProcessNode, procINORDER);
+  Tree_Process(tree, ProcessNode, IN_ORDER);
   int inOrder[] = {30, 40, 60, 10, 50, 20};
   mu_assert_int_eq(0, memcmp(inOrder, gHeight, sizeof(inOrder)));
 
   gIndex = 0;
-  Tree_Process(tree, ProcessNode, procPOSTORDER);
+  Tree_Process(tree, ProcessNode, POST_ORDER);
   int postOrder[] = {60, 40, 30, 50, 20, 10};
   mu_assert_int_eq(0, memcmp(postOrder, gHeight, sizeof(postOrder)));
 
   gIndex = 0;
-  Tree_Process(tree, ProcessNode, procPREORDER);
+  Tree_Process(tree, ProcessNode, PRE_ORDER);
   int preOrder[] = {10, 30, 40, 60, 20, 50};
   mu_assert_int_eq(0, memcmp(preOrder, gHeight, sizeof(preOrder)));
 

@@ -52,7 +52,7 @@ unitTesting:
   allow_failure: true
   
   script:
-    - bin/tests > unitTestOutput.txt
+    - bin/tests | tee unitTestOutput.txt
     - if [[ `cat unitTestOutput.txt` =~ ", 0 failures" ]];then exit 0;else exit 1;fi
     
   artifacts:
@@ -67,7 +67,7 @@ test1:
   
   script: 
     - valgrind --log-file=valgrindOutput1.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input1.txt > output1.txt
-    - diff output1.txt $TEST_FILES_PATH/output1.txt > diffOutput1.diff
+    - diff output1.txt $TEST_FILES_PATH/output1.txt | tee diffOutput1.diff
     - if [[ `cat valgrindOutput1.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
     
   artifacts:
@@ -84,7 +84,7 @@ test2:
   
   script: 
     - valgrind --log-file=valgrindOutput2.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input2.txt > output2.txt
-    - diff output2.txt $TEST_FILES_PATH/output2.txt > diffOutput2.diff
+    - diff output2.txt $TEST_FILES_PATH/output2.txt | tee diffOutput2.diff
     - if [[ `cat valgrindOutput2.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
     
   artifacts:
@@ -101,7 +101,7 @@ test3:
   
   script: 
     - valgrind --log-file=valgrindOutput3.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input3.txt > output3.txt
-    - diff output3.txt $TEST_FILES_PATH/output3.txt > diffOutput3.diff
+    - diff output3.txt $TEST_FILES_PATH/output3.txt | tee diffOutput3.diff
     - if [[ `cat valgrindOutput3.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
     
   artifacts:
@@ -118,7 +118,7 @@ test4:
   
   script: 
     - valgrind --log-file=valgrindOutput4.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input4.txt > output4.txt
-    - diff output4.txt $TEST_FILES_PATH/output4.txt > diffOutput4.diff
+    - diff output4.txt $TEST_FILES_PATH/output4.txt | tee diffOutput4.diff
     - if [[ `cat valgrindOutput4.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
     
   artifacts:
@@ -135,7 +135,7 @@ test5:
   
   script: 
     - valgrind --log-file=valgrindOutput5.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input5.txt > output5.txt
-    - diff output5.txt $TEST_FILES_PATH/output5.txt > diffOutput5.diff
+    - diff output5.txt $TEST_FILES_PATH/output5.txt | tee diffOutput5.diff
     - if [[ `cat valgrindOutput5.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
     
   artifacts:
@@ -152,7 +152,7 @@ test6:
   
   script: 
     - valgrind --log-file=valgrindOutput6.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input6.txt > output6.txt
-    - diff output6.txt $TEST_FILES_PATH/output6.txt > diffOutput6.diff
+    - diff output6.txt $TEST_FILES_PATH/output6.txt | tee diffOutput6.diff
     - if [[ `cat valgrindOutput6.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
     
   artifacts:
