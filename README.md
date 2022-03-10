@@ -1,16 +1,16 @@
-# Binární strom #
+# Binární strom
 Naprogramujte binární strom.
 
-## Vizualizace ##
+## Vizualizace
 Pro lepší pochopení funkce binárního stromu navštivte [tento odkaz](https://www.cs.usfca.edu/~galles/visualization/BST.html). Je možné vidět, jak jsou jednotlivé operace binárního stromu vykonávány. Nejsložitějším úkolem je pravděpodobně mazání a na lepší pochopení zkuste zadat následující strom. `F-B-S-A-D-L`
-![relative Tree](doc/tree.png)
+![relative Tree](docs/tree.png)
 
 Zkuste postupně zkusit smazat uzel `F`, `D`, `S` a `A`. Tyto čtyři možnosti mohou nastat, když budete mazat uzel ve vaší implementaci, takže je musíte vyřešit. 
 
 Aby bylo lépe vidět, jak probíhá mazání uzlu, který má oba podstromy, zkuste si do původního stromu přidat ještě uzely `C` a `E`, a opět proveďte smazání uzlu `F` a poté `E`.
-![relative Tree extended](doc/tree2.png)
+![relative Tree extended](docs/tree2.png)
 
-## Vaším úkolem je implementace následujících funkcí: ##
+## Vaším úkolem je implementace následujících funkcí:
 
 Funkce lze řešit i rekurzivně za pomocí pomocných funkcí.
 
@@ -33,21 +33,21 @@ Pravidla pro vkládání/mazání ze stromu lze nalézt na přednáškách o sez
 - **Tree_Process** - Zpracuje každý uzel stromu pomocí funkce specifikované ukazatelem "proc". Průchod stromem může být trojí: PREORDER, INORDER a POSTORDER.
 
 
-# Binary Tree #
+# Binary Tree
 Implement functions listed below for binary tree.
 
-## Visualisation ##
+## Visualisation
 For better understanding of binary tree visit [this link](https://www.cs.usfca.edu/~galles/visualization/BST.html). You can see the animations how are the binary operations are done.
 The most difficult operation in a tree is propably deleting for a better undestanding try to insert following nodes in tree `F`, `B`, `S`, `A`, `D`, `L`
-![relative Tree](doc/tree.png)
+![relative Tree](docs/tree.png)
 
 
 Try to remove node `F`, `D`, `S` and `A`. Those are four possible scenarios that can happen, when you're going to delete node, so you have to make sure that those scenarios are working properly with your tree.
 
 For better visualisation how is the node being deleted in a tree with both sub-trees, try to add to the original tree the following nodes `C` a `E` and delete node `F` and after that node `E`.
-![relative Tree extended](doc/tree2.png)
+![relative Tree extended](docs/tree2.png)
 
-## Implement those functions for binary tree: ##
+## Implement those functions for binary tree:
 
 
 Note: functions can be implemented recursively by using auxiliary functions.
@@ -70,7 +70,7 @@ The rules for insertion and deletions nodes from a tree can be found in lecture 
 
 - **Tree_Process** - Processes every node from a tree with function specified by pointer "proc". There are 3 ways of processing the tree: PREORDER, INORDER a POSTORDER
 
-### Ukázka běhu programu/Example of program: ###
+### Ukázka běhu programu/Example of program:
 
 ```
 Tree v1.1

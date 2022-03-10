@@ -1,20 +1,36 @@
-/*
- * data.c
+/*!
+ * \file       data.c
+ * \author     Dulik
+ * \date       9. 3. 2015
+ * \brief      Implementation of the data module.
+ * **********************************************************************
+ * \attention
+ * &copy; Copyright (c) 2022 FAI UTB. All rights reserved.
  *
- *  Created on: 9. 3. 2015
- *      Author: dulik
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
  */
 
+/* Includes --------------------------------------------------------------------------------------*/
 #include "data.h"
-#include <stdio.h>
-#include <string.h>
+
 #include "ioutils.h"
 
-int Data_Cmp(const Data_t *d1, const Data_t *d2) {
+#include <stdio.h>
+#include <string.h>
+
+/* Private types ---------------------------------------------------------------------------------*/
+/* Private macros --------------------------------------------------------------------------------*/
+/* Private variables -----------------------------------------------------------------------------*/
+/* Private function declarations -----------------------------------------------------------------*/
+/* Exported functions definitions ----------------------------------------------------------------*/
+int Data_Cmp(const Data_t *d1, const Data_t *d2)
+{
   return strcmp(d1->name, d2->name);
 }
 
-bool Data_Get(Data_t *data) {
+bool Data_Get(Data_t *data)
+{
   int eoln_pos = 0;
   printf("Please, enter a name: ");
 
@@ -41,7 +57,13 @@ bool Data_Get(Data_t *data) {
   return true;
 }
 
-void Data_Print(Data_t *data) {
-  printf("Name=%s, age=%0.1lf, weight=%0.1lf, height=%0.1lf\n", data->name,
-         data->age, data->weight, data->height);
+void Data_Print(Data_t *data)
+{
+  printf("Name=%s, age=%0.1lf, weight=%0.1lf, height=%0.1lf\n",
+         data->name,
+         data->age,
+         data->weight,
+         data->height);
 }
+
+/* Private function definitions ------------------------------------------------------------------*/
