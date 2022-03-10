@@ -12,14 +12,14 @@ add_library(${LIBNAME} ${SOURCES} ${HEADER_LIST})
 include(FetchContent)
 FetchContent_Declare(
   myMalloc
-  GIT_REPOSITORY git@git.vyuka.fai.utb.cz:ads/common/mymalloc.git
+  GIT_REPOSITORY https://mymalloc:8zj7GZZNmWyLGgQSyzsN@git.vyuka.fai.utb.cz/ads/common/mymalloc.git
 )
 
 FetchContent_MakeAvailable(myMalloc)
 
 FetchContent_Declare(
   ioutils
-  GIT_REPOSITORY git@git.vyuka.fai.utb.cz:ads/common/ioutils.git
+  GIT_REPOSITORY https://ioutils:aFiG6LqzyabnzhxzbhNC@git.vyuka.fai.utb.cz/ads/common/ioutils.git
 )
 
 FetchContent_MakeAvailable(ioutils)
