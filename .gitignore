@@ -1,4 +1,11 @@
-# Ignore user config files
-*.qbs.user
-*.idea
-doc/html/
+Debug/
+Release/
+.settings/
+*.user*
+.directory
+Makefile
+bin/
+lib/
+build/
+.idea/
+Testing
