@@ -91,22 +91,22 @@ integrationTest1:
   variables:
     SEQ_NUM: "2"
 
-integrationTest1:
+integrationTest2:
   <<: *integrationTest
   variables:
     SEQ_NUM: "3"
 
-integrationTest1:
+integrationTest3:
   <<: *integrationTest
   variables:
     SEQ_NUM: "4"
 
-integrationTest1:
+integrationTest4:
   <<: *integrationTest
   variables:
     SEQ_NUM: "5"
 
-integrationTest1:
+integrationTest5:
   <<: *integrationTest
   variables:
     SEQ_NUM: "6"
