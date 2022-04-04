@@ -318,6 +318,7 @@ TEST_F(TreeTestParam, getData)
   Data_t testingData = {"Caroline", 169, 0, 0};
   const Data_t *elm = Tree_Get_Data(Tree_Find_Node(mTree, testingData));
 
+  ASSERT_NE(elm, nullptr);
   ASSERT_EQ(*elm, testingData);
 }
 

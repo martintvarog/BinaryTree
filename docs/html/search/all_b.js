@@ -10,9 +10,8 @@ var searchData=
   ['tree_5fget_5fdata_32',['Tree_Get_Data',['../group__tree.html#gaecb2ad2afcc83e8c2ce9d864b727329a',1,'Tree_Get_Data(const TreeNode *const node):&#160;tree.c'],['../group__tree.html#gaecb2ad2afcc83e8c2ce9d864b727329a',1,'Tree_Get_Data(const TreeNode *const node):&#160;tree.c']]],
   ['tree_5finit_33',['Tree_Init',['../group__tree.html#gadebee24d2bed881503fcc431d7442806',1,'Tree_Init(Tree *const tree):&#160;tree.c'],['../group__tree.html#gadebee24d2bed881503fcc431d7442806',1,'Tree_Init(Tree *const tree):&#160;tree.c']]],
   ['tree_5finsert_34',['Tree_Insert',['../group__tree.html#ga0b81939a6116ea3831344a65b94b2f41',1,'Tree_Insert(Tree *const tree, const Data_t data):&#160;tree.c'],['../group__tree.html#ga0b81939a6116ea3831344a65b94b2f41',1,'Tree_Insert(Tree *const tree, const Data_t data):&#160;tree.c']]],
-  ['tree_5fprint_35',['Tree_Print',['../group__tree.html#ga93099a2efda4b06b6a99d4b16ed1e9e5',1,'Tree_Print(TreeNode *node, TreeNode *previous, int spaces):&#160;tree.c'],['../group__tree.html#ga93099a2efda4b06b6a99d4b16ed1e9e5',1,'Tree_Print(TreeNode *node, TreeNode *previous, int spaces):&#160;tree.c']]],
-  ['tree_5fprocess_36',['Tree_Process',['../group__tree.html#ga41b86127278ed5786fed9b0131a8eca1',1,'Tree_Process(Tree tree, TreeNodeProc proc, TreeProcessMode mode):&#160;tree.c'],['../group__tree.html#ga41b86127278ed5786fed9b0131a8eca1',1,'Tree_Process(Tree tree, TreeNodeProc proc, TreeProcessMode mode):&#160;tree.c']]],
-  ['treenode_37',['TreeNode',['../group__tree.html#ga7722439634fa41ad2301af80abb1e47f',1,'tree.h']]],
-  ['treenodeproc_38',['TreeNodeProc',['../group__tree.html#gab89efcc7eebd190d715303b66c4c9ff2',1,'tree.h']]],
-  ['treeprocessmode_39',['TreeProcessMode',['../group__tree.html#gaf49245498ce6f978c67462e85c7511a5',1,'tree.h']]]
+  ['tree_5fprocess_35',['Tree_Process',['../group__tree.html#ga41b86127278ed5786fed9b0131a8eca1',1,'Tree_Process(Tree tree, TreeNodeProc proc, TreeProcessMode mode):&#160;tree.c'],['../group__tree.html#ga41b86127278ed5786fed9b0131a8eca1',1,'Tree_Process(Tree tree, TreeNodeProc proc, TreeProcessMode mode):&#160;tree.c']]],
+  ['treenode_36',['TreeNode',['../group__tree.html#ga7722439634fa41ad2301af80abb1e47f',1,'tree.h']]],
+  ['treenodeproc_37',['TreeNodeProc',['../group__tree.html#gab89efcc7eebd190d715303b66c4c9ff2',1,'tree.h']]],
+  ['treeprocessmode_38',['TreeProcessMode',['../group__tree.html#gaf49245498ce6f978c67462e85c7511a5',1,'tree.h']]]
 ];

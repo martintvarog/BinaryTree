@@ -8,6 +8,5 @@ var tree_8c =
     [ "Tree_Get_Data", "group__tree.html#gaecb2ad2afcc83e8c2ce9d864b727329a", null ],
     [ "Tree_Init", "group__tree.html#gadebee24d2bed881503fcc431d7442806", null ],
     [ "Tree_Insert", "group__tree.html#ga0b81939a6116ea3831344a65b94b2f41", null ],
-    [ "Tree_Print", "group__tree.html#ga93099a2efda4b06b6a99d4b16ed1e9e5", null ],
     [ "Tree_Process", "group__tree.html#ga41b86127278ed5786fed9b0131a8eca1", null ]
 ];

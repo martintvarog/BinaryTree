@@ -32,7 +32,6 @@ void menu(void)
          "6 - tree_get_node_count()\n"
          "7 - tree_proces()\n"
          "M - MENU\n"
-         "P - Tree_Print()\n"
          "E - END\n");
 }
 
@@ -178,12 +177,6 @@ int main(int argc, char **argv)
 
           break;
         }
-
-        case 'p':
-        case 'P':
-          printf("\n");
-          Tree_Print(tree.root, tree.root, 0);
-          break;
 
         case 'm':
         case 'M':

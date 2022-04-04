@@ -141,7 +141,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga1c6693480a5c26d793d3da3a9a57ef87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes every node from a tree.  <a href="group__tree.html#ga1c6693480a5c26d793d3da3a9a57ef87">More...</a><br /></td></tr>
 <tr class="separator:ga1c6693480a5c26d793d3da3a9a57ef87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0b81939a6116ea3831344a65b94b2f41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tree.html#ga0b81939a6116ea3831344a65b94b2f41">Tree_Insert</a> (<a class="el" href="group__tree.html#gab383a0b2d23f5c0e7a2019c0aeff3c83">Tree</a> *const tree, const <a class="el" href="struct_data__t.html">Data_t</a> data)</td></tr>
-<tr class="memdesc:ga0b81939a6116ea3831344a65b94b2f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a node on the heap with data and puts it in the tree at the correct place.  <a href="group__tree.html#ga0b81939a6116ea3831344a65b94b2f41">More...</a><br /></td></tr>
+<tr class="memdesc:ga0b81939a6116ea3831344a65b94b2f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new node in the heap with data and puts it in the tree at the correct place.  <a href="group__tree.html#ga0b81939a6116ea3831344a65b94b2f41">More...</a><br /></td></tr>
 <tr class="separator:ga0b81939a6116ea3831344a65b94b2f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4cc15dfbdaf5b79dd74d0002b8495997"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tree.html#ga4cc15dfbdaf5b79dd74d0002b8495997">Tree_Delete</a> (<a class="el" href="group__tree.html#gab383a0b2d23f5c0e7a2019c0aeff3c83">Tree</a> *const tree, const <a class="el" href="struct_data__t.html">Data_t</a> data)</td></tr>
 <tr class="memdesc:ga4cc15dfbdaf5b79dd74d0002b8495997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a node from a tree that contains <em>data</em>.  <a href="group__tree.html#ga4cc15dfbdaf5b79dd74d0002b8495997">More...</a><br /></td></tr>
@@ -150,7 +150,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaecb2ad2afcc83e8c2ce9d864b727329a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns data from a <em>node</em>.  <a href="group__tree.html#gaecb2ad2afcc83e8c2ce9d864b727329a">More...</a><br /></td></tr>
 <tr class="separator:gaecb2ad2afcc83e8c2ce9d864b727329a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga831d31cfe43aa9cd6eb85d1675874ec3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__tree.html#ga7722439634fa41ad2301af80abb1e47f">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tree.html#ga831d31cfe43aa9cd6eb85d1675874ec3">Tree_Find_Node</a> (<a class="el" href="group__tree.html#gab383a0b2d23f5c0e7a2019c0aeff3c83">Tree</a> tree, const <a class="el" href="struct_data__t.html">Data_t</a> data)</td></tr>
-<tr class="memdesc:ga831d31cfe43aa9cd6eb85d1675874ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer at node, which holds the data.  <a href="group__tree.html#ga831d31cfe43aa9cd6eb85d1675874ec3">More...</a><br /></td></tr>
+<tr class="memdesc:ga831d31cfe43aa9cd6eb85d1675874ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search the node in the <em>tree</em> the contains the <em>data</em>.  <a href="group__tree.html#ga831d31cfe43aa9cd6eb85d1675874ec3">More...</a><br /></td></tr>
 <tr class="separator:ga831d31cfe43aa9cd6eb85d1675874ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga74e23bb814c076ef8cb39315f892bf34"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tree.html#ga74e23bb814c076ef8cb39315f892bf34">Tree_Get_Count</a> (<a class="el" href="group__tree.html#gab383a0b2d23f5c0e7a2019c0aeff3c83">Tree</a> tree)</td></tr>
 <tr class="memdesc:ga74e23bb814c076ef8cb39315f892bf34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets count of the nodes in the tree.  <a href="group__tree.html#ga74e23bb814c076ef8cb39315f892bf34">More...</a><br /></td></tr>
@@ -158,9 +158,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga41b86127278ed5786fed9b0131a8eca1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tree.html#ga41b86127278ed5786fed9b0131a8eca1">Tree_Process</a> (<a class="el" href="group__tree.html#gab383a0b2d23f5c0e7a2019c0aeff3c83">Tree</a> tree, <a class="el" href="group__tree.html#gab89efcc7eebd190d715303b66c4c9ff2">TreeNodeProc</a> proc, <a class="el" href="group__tree.html#gaf49245498ce6f978c67462e85c7511a5">TreeProcessMode</a> mode)</td></tr>
 <tr class="memdesc:ga41b86127278ed5786fed9b0131a8eca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process every node in a tree with a function specified by a pointer <em>proc</em>.  <a href="group__tree.html#ga41b86127278ed5786fed9b0131a8eca1">More...</a><br /></td></tr>
 <tr class="separator:ga41b86127278ed5786fed9b0131a8eca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga93099a2efda4b06b6a99d4b16ed1e9e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tree.html#ga93099a2efda4b06b6a99d4b16ed1e9e5">Tree_Print</a> (<a class="el" href="group__tree.html#ga7722439634fa41ad2301af80abb1e47f">TreeNode</a> *node, <a class="el" href="group__tree.html#ga7722439634fa41ad2301af80abb1e47f">TreeNode</a> *previous, int spaces)</td></tr>
-<tr class="memdesc:ga93099a2efda4b06b6a99d4b16ed1e9e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints tree in console.  <a href="group__tree.html#ga93099a2efda4b06b6a99d4b16ed1e9e5">More...</a><br /></td></tr>
-<tr class="separator:ga93099a2efda4b06b6a99d4b16ed1e9e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>The binary tree allows the storage of the data in the tree-like structure following one simple rule. A tree node with a lower value goes to the left, otherwise, it goes right. With this API this rule is implemented and it is valid even if some node is deleted from the structure. </p>
@@ -233,6 +230,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Deletes every node from a tree. </p>
+<p>It traverses the tree, frees the allocated memory, and sets the <a class="el" href="struct___tree.html#a7578e99b45e73434314682f5e67771c8">Tree::nodeCount</a> to 0.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">tree</td><td>Pointer at tree to clear. </td></tr>
@@ -269,7 +267,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Deletes a node from a tree that contains <em>data</em>. </p>
-<p>Deleting is done according to rules this means that if the node has two children, find a node with the lowest value(the most right node from a node that is being deleted) and place it instead of the deleted node. If the node to delete has one child, simply redirect the pointers to the child, and if the node has no children, just delete the node and update pointers.</p>
+<p>Deleting is done according to rules. This means that if the node has two children, find a node with the lowest value (the most right node from a node that is being deleted) and place it instead of the deleted node. If the deleted node has one child, simply redirect the pointers to the child, and if the node has no children, just delete the node and update parent pointer.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">tree</td><td>Pointer to the tree, where to delete the node. </td></tr>
@@ -306,11 +304,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns pointer at node, which holds the data. </p>
+<p>Search the node in the <em>tree</em> the contains the <em>data</em>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">tree</td><td>Pointer to the tree, from which we want to find a node. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Pointer to the searching data.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tree</td><td>Instance of the tree where we want to look for a <em>data</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The searched data.</td></tr>
   </table>
   </dd>
 </dl>
@@ -337,7 +335,7 @@ Functions</h2></td></tr>
 <p>Gets count of the nodes in the tree. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">tree</td><td>Pointer to the tree.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tree</td><td>Instance of the tree.</td></tr>
   </table>
   </dd>
 </dl>
@@ -425,10 +423,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a node on the heap with data and puts it in the tree at the correct place. </p>
-<p>Smaller value goes to the left node, bigger value to the right node.</p>
+<p>Creates a new node in the heap with data and puts it in the tree at the correct place. </p>
+<p>Smaller value goes to the left node, bigger value to the right node. If data are already in the tree, the insertion is aborted.</p>
 <p>Example: After inserting these values: Petr, Jana and Tom in given order, the resulting tree will look like this: Petr / \ Jana Tom</p>
-<p>Uses function <a class="el" href="group__data.html#ga1dc4359e044d1e60c104ede24ab6fcae">Data_Cmp</a> to compare the data.</p>
+<p>Use function <a class="el" href="group__data.html#ga1dc4359e044d1e60c104ede24ab6fcae">Data_Cmp</a> to compare the data.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">tree</td><td>Pointer to the tree, where to store data. </td></tr>
@@ -437,51 +435,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if data were inserted and increases the <a class="el" href="struct___tree.html#a7578e99b45e73434314682f5e67771c8">Tree::nodeCount</a> by 1. Returns false if node insertion was unsuccessful or the tree already has a node with the same value. </dd></dl>
-
-</div>
-</div>
-<a id="ga93099a2efda4b06b6a99d4b16ed1e9e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga93099a2efda4b06b6a99d4b16ed1e9e5">&#9670;&nbsp;</a></span>Tree_Print()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Tree_Print </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__tree.html#ga7722439634fa41ad2301af80abb1e47f">TreeNode</a> *&#160;</td>
-          <td class="paramname"><em>node</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__tree.html#ga7722439634fa41ad2301af80abb1e47f">TreeNode</a> *&#160;</td>
-          <td class="paramname"><em>previous</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>spaces</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Prints tree in console. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>Pointer at the next node. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">previous</td><td>Pointer at previous node that we were working with. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">spaces</td><td>The number of spaces for console.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>Bonus function. </dd></dl>
 
 </div>
 </div>
@@ -521,7 +474,7 @@ Functions</h2></td></tr>
 <p>The processing mode is selected by <em>mode</em>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">tree</td><td>Pointer to the tree to process. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tree</td><td>Instance of the tree to process. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">proc</td><td>Pointer to the callback function for node processing. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>Type of tree processing.</td></tr>
   </table>

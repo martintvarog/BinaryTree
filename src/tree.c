@@ -72,11 +72,4 @@ void Tree_Process(Tree tree, TreeNodeProc proc, TreeProcessMode mode)
   UNUSED(mode);
 }
 
-void Tree_Print(TreeNode *node, TreeNode *previous, int spaces)
-{
-  UNUSED(node);
-  UNUSED(previous);
-  UNUSED(spaces);
-}
-
 /* Private function definitions ------------------------------------------------------------------*/

@@ -81,14 +81,16 @@ typedef void (*TreeNodeProc)(TreeNode *node);
  */
 bool Tree_Init(Tree *const tree);
 
-/*! Deletes every node from a tree.
+/*! Deletes every node from a tree. It traverses the tree, frees the allocated memory, and sets the
+ * \ref Tree.nodeCount to 0.
  *
  * \param[in] tree Pointer at tree to clear.
  */
 void Tree_Clear(Tree *const tree);
 
-/*! Creates a node on the heap with data and puts it in the tree at the correct place. Smaller value
- * goes to the left node, bigger value to the right node.
+/*! Creates a new node in the heap with data and puts it in the tree at the correct place. Smaller
+ * value goes to the left node, bigger value to the right node. If data are already in the tree, the
+ * insertion is aborted.
  *
  * Example: After inserting these values: Petr, Jana and
  * Tom in given order, the resulting tree will look like this:
@@ -96,7 +98,7 @@ void Tree_Clear(Tree *const tree);
  *                 /    \
  *             Jana     Tom
  *
- * Uses function \ref Data_Cmp to compare the data.
+ * Use function \ref Data_Cmp to compare the data.
  *
  * \param[in] tree Pointer to the tree, where to store data.
  * \param[in] data Data to store.
@@ -106,11 +108,11 @@ void Tree_Clear(Tree *const tree);
  */
 bool Tree_Insert(Tree *const tree, const Data_t data);
 
-/*! Deletes a node from a tree that contains \a data. Deleting is done according to rules this means
- * that if the node has two children, find a node with the lowest value(the most right node from a
- * node that is being deleted) and place it instead of the deleted node. If the node to delete has
- * one child, simply redirect the pointers to the child, and if the node has no children, just
- * delete the node and update pointers.
+/*! Deletes a node from a tree that contains \a data. Deleting is done according to rules. This
+ * means that if the node has two children, find a node with the lowest value (the most right node
+ * from a node that is being deleted) and place it instead of the deleted node. If the deleted node
+ * has one child, simply redirect the pointers to the child, and if the node has no children, just
+ * delete the node and update parent pointer.
  *
  * \param[in] tree Pointer to the tree, where to delete the node.
  * \param[in] data Data that we want to remove from a tree.
@@ -125,10 +127,10 @@ void Tree_Delete(Tree *const tree, const Data_t data);
  */
 const Data_t *Tree_Get_Data(const TreeNode *const node);
 
-/*! Returns pointer at node, which holds the data.
+/*! Search the node in the \a tree the contains the \a data.
  *
- * \param[in] tree Pointer to the tree, from which we want to find a node.
- * \param[in] data Pointer to the searching data.
+ * \param[in] tree Instance of the tree where we want to look for a \a data.
+ * \param[in] data The searched data.
  *
  * \return Returns pointer to the node with searched data, otherwise return NULL.
  */
@@ -136,7 +138,7 @@ TreeNode *Tree_Find_Node(Tree tree, const Data_t data);
 
 /*! Gets count of the nodes in the tree.
  *
- * \param[in] tree Pointer to the tree.
+ * \param[in] tree Instance of the tree.
  *
  * \return Returns the number of items in a tree.
  */
@@ -145,24 +147,13 @@ size_t Tree_Get_Count(Tree tree);
 /*! Process every node in a tree with a function specified by a pointer \a proc. The processing mode
  * is selected by \a mode.
  *
- * \param[in] tree Pointer to the tree to process.
+ * \param[in] tree Instance of the tree to process.
  * \param[in] proc Pointer to the callback function for node processing.
  * \param[in] mode Type of tree processing.
  *
  * \sa TreeProcessMode
  */
 void Tree_Process(Tree tree, TreeNodeProc proc, TreeProcessMode mode);
-
-/*! Prints tree in console.
- *
- * \param[in] node      Pointer at the next node.
- * \param[in] previous  Pointer at previous node that we were working with.
- * \param[in] spaces    The number of spaces for console.
- *
- * \note Bonus function.
- */
-void Tree_Print(TreeNode *node, TreeNode *previous, int spaces);
-
 #endif  //_TREE_H_
 
 /*! \} */

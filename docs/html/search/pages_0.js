@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['binární_20strom_82',['Binární strom',['../index.html',1,'']]]
+  ['binární_20strom_80',['Binární strom',['../index.html',1,'']]]
 ];
