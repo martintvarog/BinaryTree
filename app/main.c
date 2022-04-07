@@ -159,7 +159,7 @@ int main(int argc, char **argv)
 
         case '7': {
           long mode = 0;
-          printf("Process:\n1 - preorder\n2 - inorder\n3 - postorder\nYour "
+          printf("Process:\n0 - preorder\n1 - inorder\n0 - postorder\nYour "
                  "choice");
           running = io_utils_get_long(&mode);
 
