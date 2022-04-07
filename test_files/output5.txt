@@ -15,9 +15,9 @@ Tree initialized successfuly.
 
 Your choice: Your choice: 7
 Process:
-1 - preorder
-2 - inorder
-3 - postorder
+0 - preorder
+1 - inorder
+2 - postorder
 Your choice1
 
 
@@ -47,9 +47,9 @@ Please, enter a name: Enter age, weight and height (separated by Enter):
 
 Your choice: Your choice: 7
 Process:
-1 - preorder
-2 - inorder
-3 - postorder
+0 - preorder
+1 - inorder
+2 - postorder
 Your choice1
 
 Name=Anna, age=30.0, weight=60.0, height=160.0
@@ -76,9 +76,9 @@ Please, enter a name: Enter age, weight and height (separated by Enter):
 
 Your choice: Your choice: 7
 Process:
-1 - preorder
-2 - inorder
-3 - postorder
+0 - preorder
+1 - inorder
+2 - postorder
 Your choice1
 
 Name=Anna, age=30.0, weight=60.0, height=160.0
@@ -102,9 +102,9 @@ Please, enter a name: Enter age, weight and height (separated by Enter):
 
 Your choice: Your choice: 7
 Process:
-1 - preorder
-2 - inorder
-3 - postorder
+0 - preorder
+1 - inorder
+2 - postorder
 Your choice1
 
 Name=Anna, age=30.0, weight=60.0, height=160.0
@@ -125,9 +125,9 @@ Please, enter a name: Enter age, weight and height (separated by Enter):
 
 Your choice: Your choice: 7
 Process:
-1 - preorder
-2 - inorder
-3 - postorder
+0 - preorder
+1 - inorder
+2 - postorder
 Your choice1
 
 Name=Anna, age=30.0, weight=60.0, height=160.0
@@ -145,9 +145,9 @@ Please, enter a name: Enter age, weight and height (separated by Enter):
 
 Your choice: Your choice: 7
 Process:
-1 - preorder
-2 - inorder
-3 - postorder
+0 - preorder
+1 - inorder
+2 - postorder
 Your choice1
 
 Name=Beata, age=30.0, weight=60.0, height=160.0

@@ -159,8 +159,10 @@ int main(int argc, char **argv)
 
         case '7': {
           long mode = 0;
-          printf("Process:\n0 - preorder\n1 - inorder\n0 - postorder\nYour "
-                 "choice");
+          printf("Process:\n%d - preorder\n%d - inorder\n%d - postorder\nYour choice",
+                 PRE_ORDER,
+                 IN_ORDER,
+                 POST_ORDER);
           running = io_utils_get_long(&mode);
 
           if (!running) {
