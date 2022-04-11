@@ -18,9 +18,9 @@ Tree initialized successfuly.
 
 Your choice: Your choice: 7
 Process:
-1 - preorder
-2 - inorder
-3 - postorder
+0 - preorder
+1 - inorder
+2 - postorder
 Your choice1
 
 
@@ -41,9 +41,9 @@ The number of nodes in a tree: 3
 
 Your choice: Your choice: 7
 Process:
-1 - preorder
-2 - inorder
-3 - postorder
+0 - preorder
+1 - inorder
+2 - postorder
 Your choice2
 
 Name=Anna, age=30.0, weight=60.0, height=160.0
@@ -61,9 +61,9 @@ Please, enter a name: Enter age, weight and height (separated by Enter):
 
 Your choice: Your choice: 7
 Process:
-1 - preorder
-2 - inorder
-3 - postorder
+0 - preorder
+1 - inorder
+2 - postorder
 Your choice2
 
 Name=Xaver, age=60.0, weight=70.0, height=175.0
