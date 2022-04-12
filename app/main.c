@@ -154,13 +154,15 @@ int main(int argc, char **argv)
         }
 
         case '6':
-          printf("The number of nodes in a tree: %ld\n", (long unsigned int)Tree_Get_Count(tree));
+          printf("The number of nodes in a tree: %zu\n", Tree_Get_Count(tree));
           break;
 
         case '7': {
           long mode = 0;
-          printf("Process:\n1 - preorder\n2 - inorder\n3 - postorder\nYour "
-                 "choice");
+          printf("Process:\n%d - preorder\n%d - inorder\n%d - postorder\nYour choice",
+                 PRE_ORDER,
+                 IN_ORDER,
+                 POST_ORDER);
           running = io_utils_get_long(&mode);
 
           if (!running) {
@@ -169,7 +171,7 @@ int main(int argc, char **argv)
 
           printf("%ld\n\n", mode);
 
-          if (mode >= 1 && mode <= 3) {
+          if (mode >= PRE_ORDER && mode <= POST_ORDER) {
             Tree_Process(tree, (TreeNodeProc)process_tree_node, (TreeProcessMode)mode);
           } else {
             printf("Unknown option!\n");

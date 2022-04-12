@@ -25,23 +25,32 @@ extern "C" {
 #include "tree.h"
 }
 
+/* Private variables -----------------------------------------------------------------------------*/
+static std::vector<std::string> mNames;
+
 /* Private types ---------------------------------------------------------------------------------*/
 class TreeTest : public ::testing::Test
 {
 protected:
   Tree mTree;
 
-  void SetUp() { Tree_Init(&mTree); }
+  void SetUp()
+  {
+    Tree_Init(&mTree);
+    mNames.clear();
+  }
   void Teardown() { Tree_Clear(&mTree); }
 };
 
-class TreeTestParam : public testing::TestWithParam<std::tuple<Data_t, std::vector<int>>>
+class TreeTestParam :
+  public testing::TestWithParam<std::tuple<std::vector<Data_t>, std::vector<std::string>>>
 {
 protected:
   Tree mTree;
 
   void SetUp()
   {
+    mNames.clear();
     Tree_Init(&mTree);
     Data_t data[] = {{"Franz", 167, 0, 0},
                      {"Bianca", 158, 0, 0},
@@ -61,9 +70,6 @@ protected:
 };
 
 /* Private macros --------------------------------------------------------------------------------*/
-/* Private variables -----------------------------------------------------------------------------*/
-static int gIndex = 0;
-static int gHeight[0x400];
 
 /* Private function declarations -----------------------------------------------------------------*/
 bool operator==(const Data_t &lhs, const Data_t &rhs);
@@ -83,8 +89,7 @@ bool operator!=(const Data_t &lhs, const Data_t &rhs)
 
 void ProcessNode(TreeNode *node)
 {
-  gHeight[gIndex] = node->data.age;
-  gIndex++;
+  mNames.push_back(node->data.name);
 }
 
 TEST(Tree, init)
@@ -250,45 +255,55 @@ TEST_F(TreeTest, process)
   }
 
   Tree_Process(mTree, ProcessNode, IN_ORDER);
-  ASSERT_THAT(std::vector<int>(gHeight, gHeight + gIndex),
-              ::testing::ElementsAreArray({30, 40, 60, 10, 50, 20}));
+  ASSERT_THAT(mNames,
+              ::testing::ElementsAreArray({"Adam", "Jiri", "Michal", "Petr", "Roman", "Tomas"}));
 
-  gIndex = 0;
+  mNames.clear();
   Tree_Process(mTree, ProcessNode, POST_ORDER);
-  ASSERT_THAT(std::vector<int>(gHeight, gHeight + gIndex),
-              ::testing::ElementsAreArray({60, 40, 30, 50, 20, 10}));
+  ASSERT_THAT(mNames,
+              ::testing::ElementsAreArray({"Michal", "Jiri", "Adam", "Roman", "Tomas", "Petr"}));
 
-  gIndex = 0;
+  mNames.clear();
   Tree_Process(mTree, ProcessNode, PRE_ORDER);
-  ASSERT_THAT(std::vector<int>(gHeight, gHeight + gIndex),
-              ::testing::ElementsAreArray({10, 30, 40, 60, 20, 50}));
+  ASSERT_THAT(mNames,
+              ::testing::ElementsAreArray({"Petr", "Adam", "Jiri", "Michal", "Tomas", "Roman"}));
 }
 
 TEST_P(TreeTestParam, treeDelete)
 {
-  auto [toDelete, expectedValues] = GetParam();
-  Tree_Delete(&mTree, toDelete);
+  auto [toDeleteVect, expectedValues] = GetParam();
+  for (const auto &toDelete : toDeleteVect) {
+    Tree_Delete(&mTree, toDelete);
+  }
 
-  gIndex = 0;
   ASSERT_EQ(mTree.nodeCount, expectedValues.size());
   Tree_Process(mTree, ProcessNode, IN_ORDER);
-  ASSERT_THAT(std::vector<int>(gHeight, gHeight + gIndex),
-              ::testing::ElementsAreArray(expectedValues));
+  ASSERT_THAT(mNames, ::testing::ElementsAreArray(expectedValues));
 }
 
 INSTANTIATE_TEST_SUITE_P(
   treeDelete,
   TreeTestParam,
-  testing::Values(std::make_tuple(Data_t{"Franz", 167, 0, 0},
-                                  std::vector<int>({179, 158, 169, 164, 198, 184, 174})),
-                  std::make_tuple(Data_t{"Sally", 174, 0, 0},
-                                  std::vector<int>({179, 158, 169, 164, 198, 167, 184})),
-                  std::make_tuple(Data_t{"Aaron", 179, 0, 0},
-                                  std::vector<int>({158, 169, 164, 198, 167, 184, 174})),
-                  std::make_tuple(Data_t{"Bianca", 158, 0, 0},
-                                  std::vector<int>({179, 169, 164, 198, 167, 184, 174})),
-                  std::make_tuple(Data_t{"Betty", 179, 0, 0},
-                                  std::vector<int>({179, 158, 169, 164, 198, 167, 184, 174}))));
+  testing::Values(
+    std::make_tuple(
+      std::vector<Data_t>{Data_t{"Franz", 167, 0, 0}},
+      std::vector<std::string>({"Aaron", "Bianca", "Caroline", "Daisy", "Ethan", "Luke", "Sally"})),
+    std::make_tuple(
+      std::vector<Data_t>{Data_t{"Franz", 167, 0, 0}, Data_t{"Ethan", 167, 0, 0}},
+      std::vector<std::string>({"Aaron", "Bianca", "Caroline", "Daisy", "Luke", "Sally"})),
+    std::make_tuple(
+      std::vector<Data_t>{Data_t{"Sally", 174, 0, 0}},
+      std::vector<std::string>({"Aaron", "Bianca", "Caroline", "Daisy", "Ethan", "Franz", "Luke"})),
+    std::make_tuple(
+      std::vector<Data_t>{Data_t{"Aaron", 179, 0, 0}},
+      std::vector<std::string>({"Bianca", "Caroline", "Daisy", "Ethan", "Franz", "Luke", "Sally"})),
+    std::make_tuple(
+      std::vector<Data_t>{Data_t{"Bianca", 158, 0, 0}},
+      std::vector<std::string>({"Aaron", "Caroline", "Daisy", "Ethan", "Franz", "Luke", "Sally"})),
+    std::make_tuple(
+      std::vector<Data_t>{Data_t{"Betty", 179, 0, 0}},
+      std::vector<std::string>(
+        {"Aaron", "Bianca", "Caroline", "Daisy", "Ethan", "Franz", "Luke", "Sally"}))));
 
 TEST_F(TreeTest, deleteAll)
 {
