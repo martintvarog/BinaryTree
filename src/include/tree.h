@@ -109,10 +109,10 @@ void Tree_Clear(Tree *const tree);
 bool Tree_Insert(Tree *const tree, const Data_t data);
 
 /*! Deletes a node from a tree that contains \a data. Deleting is done according to rules. This
- * means that if the node has two children, find a node with the lowest value (the most right node
- * from a node that is being deleted) and place it instead of the deleted node. If the deleted node
- * has one child, simply redirect the pointers to the child, and if the node has no children, just
- * delete the node and update parent pointer.
+ * means that if the node has two children, it finds a node with the highest value (the most right)
+ * in the left subtree and places it instead of the deleted node. If the deleted node has one child,
+ * simply redirect the pointers to the child, and if the node has no children, just delete the node
+ * and update parent pointer.
  *
  * \param[in] tree Pointer to the tree, where to delete the node.
  * \param[in] data Data that we want to remove from a tree.
